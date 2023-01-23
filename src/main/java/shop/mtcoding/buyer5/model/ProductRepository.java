@@ -7,15 +7,15 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface ProductRepository {
-    public int insert(@Param("name") String name, @Param("price") String price,
-            @Param("qty") String qty);
+        public int insert(@Param("name") String name, @Param("price") String price,
+                        @Param("qty") String qty);
 
-    public List<User> findAll();
+        public List<Product> findAll();
 
-    public User findById(int id);
+        public Product findById(int id);
 
-    public int updateById(@Param("name") String name, @Param("price") String price,
-            @Param("qty") String qty, @Param("id") int id);
+        public int updateById(@Param("name") String name, @Param("price") String price,
+                        @Param("qty") String qty, @Param("id") int id);
 
-    public int deleteById(int id);
+        public int deleteById(int id);
 }

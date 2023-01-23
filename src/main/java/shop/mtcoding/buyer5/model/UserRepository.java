@@ -12,6 +12,8 @@ public interface UserRepository {
 
     public List<User> findAll();
 
+    public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
     public User findById(int id);
 
     public int updateById(@Param("password") String password, @Param("id") int id);

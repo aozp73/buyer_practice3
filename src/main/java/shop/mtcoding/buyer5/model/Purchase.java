@@ -13,4 +13,5 @@ public class Purchase {
     private int productId;
     private int count;
     private Timestamp createdAt;
+
 }

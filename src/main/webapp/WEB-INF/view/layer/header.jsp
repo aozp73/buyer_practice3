@@ -15,7 +15,7 @@
         <body>
 
         <c:choose>
-           <c:when test="${remember == null}">
+           <c:when test="${principal == null}">
                        <li><a href="/">상품목록</a></li>
             <li><a href="/loginForm">로그인</a></li>
             <li><a href="/joinForm">회원가입</a></li>
@@ -23,8 +23,8 @@
         
            <c:otherwise>
             <li><a href="/">상품목록</a></li>
-            <li><a href="/">구매목록</a></li>
-            <li><a href="/">로그아웃</a></li>
+            <li><a href="/purchase">구매목록</a></li>
+            <li><a href="/logout">로그아웃</a></li>
            </c:otherwise>
         </c:choose>
         <hr>

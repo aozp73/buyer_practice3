@@ -1,5 +1,7 @@
 package shop.mtcoding.buyer5.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,9 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    HttpSession session;
 
     @GetMapping("/loginForm")
     public String loginForm() {
@@ -30,6 +35,7 @@ public class UserController {
         if (user == null) {
             return "redirect:/loginForm";
         } else {
+            session.setAttribute("remember", user);
             return "redirect:/";
         }
     }
@@ -42,5 +48,11 @@ public class UserController {
         } else {
             return "redirect:/joinForm";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return "redirect:/";
     }
 }

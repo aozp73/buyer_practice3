@@ -13,12 +13,18 @@
         </head>
 
         <body>
-                <ul>
+
+        <c:choose>
+           <c:when test="${remember == null}">
+                       <li><a href="/">상품목록</a></li>
+            <li><a href="/loginForm">로그인</a></li>
+            <li><a href="/joinForm">회원가입</a></li>
+           </c:when>
+        
+           <c:otherwise>
             <li><a href="/">상품목록</a></li>
             <li><a href="/">구매목록</a></li>
             <li><a href="/">로그아웃</a></li>
-            <li><a href="/">상품목록</a></li>
-            <li><a href="/loginForm">로그인</a></li>
-            <li><a href="/joinForm">회원가입</a></li>
-        </ul>
+           </c:otherwise>
+        </c:choose>
         <hr>
